@@ -9,24 +9,31 @@
 import UIKit
 
 class DeviceInfoCell: UITableViewCell {
-    
     @IBOutlet weak var OSIcon: UIImageView!
     @IBOutlet weak var DeviceName: UILabel!
     @IBOutlet weak var DeviceState: UILabel!
 }
 
-class DevicesTableViewController: UITableViewController {
-
+class DevicesTableViewController: UITableViewController, DeviceServiceViewDelegate {
+ 
     let deviceService = DeviceService.instance()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        deviceService.subscribe(listener: self)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    func UpdateViewDevices(areEqual: Bool) {
+        self.tableView.reloadData()
+    }
+    
+    func UpdateViewDevices(areChanged: Bool) {
+        self.tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {

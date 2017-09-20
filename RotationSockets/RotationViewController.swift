@@ -23,7 +23,6 @@ class RotationViewController: UIViewController, DeviceServiceViewDelegate {
     }
     
     func UpdateViewDevices(areEqual: Bool){
-        print("\(#function)")
         if areEqual {
             self.view.backgroundColor = UIColor.green
         } else {

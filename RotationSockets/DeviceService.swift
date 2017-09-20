@@ -23,7 +23,7 @@ class DeviceService: DeviceEventListener {
     static func instance() -> DeviceService { return singleton }
     
     // The view that is acting as a EventListener.
-    private var eventDelegate : DeviceServiceViewDelegate? = nil
+    private var eventDelegate : [DeviceServiceViewDelegate] = []
     let socket = SocketIOClient(socketURL: URL(string:"https://rotations.jordify.nl")!)
     
     var devices : [Device] = []
@@ -35,6 +35,7 @@ class DeviceService: DeviceEventListener {
         
         addSocketHandlers()
         socket.connect()
+        registerDevice(device: thisDevice)
         
 //        let fakeAndroidDevice = Device.init(deviceName: "FakeAndroidPhone", os: Device.OS.Android, orientation: Device.Orientation.Landscape)
 //        thisDevice.subscribe(listener: self)
@@ -65,6 +66,9 @@ class DeviceService: DeviceEventListener {
             json.dictionaryObject = arr.first!
             
             deviceObject = Device.init(dictionary: arr.first!)
+        } else if let jsonString = data as? [String] {
+            let json = JSON.init(parseJSON: jsonString.first!)
+            deviceObject = Device.init(json: json)
         }
         
         // Cancel execution when device is nil.
@@ -76,6 +80,10 @@ class DeviceService: DeviceEventListener {
         } else {
             deviceObject!.subscribe(listener: self)
             devices.append(deviceObject!)
+            
+            for delegate in self.eventDelegate {
+                delegate.UpdateViewDevices(areChanged: true)
+            }
         }
     }
     
@@ -95,7 +103,9 @@ class DeviceService: DeviceEventListener {
             equalState = equalState && (firstOrientation == device.orientation)
         }
         
-        self.eventDelegate?.UpdateViewDevices(areEqual: equalState)
+        for delegate in self.eventDelegate {
+            delegate.UpdateViewDevices(areEqual: equalState)
+        }
     }
     
     func emitDeviceChangeEvent(object: Device){
@@ -106,11 +116,11 @@ class DeviceService: DeviceEventListener {
     
     // Functions to register a view as DeviceServiceViewDelegate
     func subscribe(listener: DeviceServiceViewDelegate ){
-        self.eventDelegate = listener
+        self.eventDelegate.append(listener)
     }
     
     func unsubscribe(){
-        self.eventDelegate = nil
+        //todo
     }
     
     deinit {
