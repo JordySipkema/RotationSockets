@@ -14,6 +14,14 @@
 		681FF8491F714E9C00A55AB8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 681FF8471F714E9C00A55AB8 /* LaunchScreen.storyboard */; };
 		681FF8541F714E9C00A55AB8 /* RotationSocketsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681FF8531F714E9C00A55AB8 /* RotationSocketsTests.swift */; };
 		681FF85F1F714E9C00A55AB8 /* RotationSocketsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681FF85E1F714E9C00A55AB8 /* RotationSocketsUITests.swift */; };
+		681FF8731F715FF600A55AB8 /* RotationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681FF8721F715FF600A55AB8 /* RotationViewController.swift */; };
+		681FF8751F71602F00A55AB8 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681FF8741F71602F00A55AB8 /* Device.swift */; };
+		681FF8771F71615D00A55AB8 /* DeviceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681FF8761F71615D00A55AB8 /* DeviceService.swift */; };
+		683112B31F71EC510086CE90 /* SocketIO.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 683112AC1F71EA1A0086CE90 /* SocketIO.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		683112B51F71EC510086CE90 /* StarscreamSocketIO.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 683112AD1F71EA1A0086CE90 /* StarscreamSocketIO.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		683112B81F71EFA10086CE90 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 683112B71F71EFA00086CE90 /* SwiftyJSON.framework */; };
+		683112B91F71EFA10086CE90 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 683112B71F71EFA00086CE90 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		68D973851F71C03800FB6BBF /* DevicesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D973841F71C03800FB6BBF /* DevicesTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +41,22 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		683112B61F71EC510086CE90 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				683112B51F71EC510086CE90 /* StarscreamSocketIO.framework in Embed Frameworks */,
+				683112B31F71EC510086CE90 /* SocketIO.framework in Embed Frameworks */,
+				683112B91F71EFA10086CE90 /* SwiftyJSON.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		681FF83B1F714E9C00A55AB8 /* RotationSockets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RotationSockets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		681FF83E1F714E9C00A55AB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +71,13 @@
 		681FF85A1F714E9C00A55AB8 /* RotationSocketsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RotationSocketsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		681FF85E1F714E9C00A55AB8 /* RotationSocketsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationSocketsUITests.swift; sourceTree = "<group>"; };
 		681FF8601F714E9C00A55AB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		681FF8721F715FF600A55AB8 /* RotationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotationViewController.swift; sourceTree = "<group>"; };
+		681FF8741F71602F00A55AB8 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		681FF8761F71615D00A55AB8 /* DeviceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceService.swift; sourceTree = "<group>"; };
+		683112AC1F71EA1A0086CE90 /* SocketIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SocketIO.framework; path = Carthage/Build/iOS/SocketIO.framework; sourceTree = "<group>"; };
+		683112AD1F71EA1A0086CE90 /* StarscreamSocketIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StarscreamSocketIO.framework; path = Carthage/Build/iOS/StarscreamSocketIO.framework; sourceTree = "<group>"; };
+		683112B71F71EFA00086CE90 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		68D973841F71C03800FB6BBF /* DevicesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				683112B81F71EFA10086CE90 /* SwiftyJSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,10 +109,12 @@
 		681FF8321F714E9C00A55AB8 = {
 			isa = PBXGroup;
 			children = (
+				683112B71F71EFA00086CE90 /* SwiftyJSON.framework */,
 				681FF83D1F714E9C00A55AB8 /* RotationSockets */,
 				681FF8521F714E9C00A55AB8 /* RotationSocketsTests */,
 				681FF85D1F714E9C00A55AB8 /* RotationSocketsUITests */,
 				681FF83C1F714E9C00A55AB8 /* Products */,
+				683112AB1F71EA1A0086CE90 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,12 +131,16 @@
 		681FF83D1F714E9C00A55AB8 /* RotationSockets */ = {
 			isa = PBXGroup;
 			children = (
+				681FF8721F715FF600A55AB8 /* RotationViewController.swift */,
 				681FF83E1F714E9C00A55AB8 /* AppDelegate.swift */,
 				681FF8401F714E9C00A55AB8 /* ViewController.swift */,
 				681FF8421F714E9C00A55AB8 /* Main.storyboard */,
+				68D973841F71C03800FB6BBF /* DevicesTableViewController.swift */,
 				681FF8451F714E9C00A55AB8 /* Assets.xcassets */,
 				681FF8471F714E9C00A55AB8 /* LaunchScreen.storyboard */,
 				681FF84A1F714E9C00A55AB8 /* Info.plist */,
+				681FF8741F71602F00A55AB8 /* Device.swift */,
+				681FF8761F71615D00A55AB8 /* DeviceService.swift */,
 			);
 			path = RotationSockets;
 			sourceTree = "<group>";
@@ -125,6 +163,15 @@
 			path = RotationSocketsUITests;
 			sourceTree = "<group>";
 		};
+		683112AB1F71EA1A0086CE90 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				683112AC1F71EA1A0086CE90 /* SocketIO.framework */,
+				683112AD1F71EA1A0086CE90 /* StarscreamSocketIO.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,6 +182,7 @@
 				681FF8371F714E9C00A55AB8 /* Sources */,
 				681FF8381F714E9C00A55AB8 /* Frameworks */,
 				681FF8391F714E9C00A55AB8 /* Resources */,
+				683112B61F71EC510086CE90 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -149,9 +197,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 681FF8661F714E9C00A55AB8 /* Build configuration list for PBXNativeTarget "RotationSocketsTests" */;
 			buildPhases = (
+				2D7F49070635C1864897272C /* [CP] Check Pods Manifest.lock */,
 				681FF84B1F714E9C00A55AB8 /* Sources */,
 				681FF84C1F714E9C00A55AB8 /* Frameworks */,
 				681FF84D1F714E9C00A55AB8 /* Resources */,
+				5F03D0F5D914916D8E056ED5 /* [CP] Embed Pods Frameworks */,
+				5010D35EC88B60072863364B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,9 +218,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 681FF8691F714E9C00A55AB8 /* Build configuration list for PBXNativeTarget "RotationSocketsUITests" */;
 			buildPhases = (
+				D7E98D6146239662907F7129 /* [CP] Check Pods Manifest.lock */,
 				681FF8561F714E9C00A55AB8 /* Sources */,
 				681FF8571F714E9C00A55AB8 /* Frameworks */,
 				681FF8581F714E9C00A55AB8 /* Resources */,
+				B673550520A3B0128C1A7541 /* [CP] Embed Pods Frameworks */,
+				B13C78C8F9E77B8D2C1E12F2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -254,13 +308,116 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2D7F49070635C1864897272C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RotationSocketsTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5010D35EC88B60072863364B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RotationSocketsTests/Pods-RotationSocketsTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5F03D0F5D914916D8E056ED5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RotationSocketsTests/Pods-RotationSocketsTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B13C78C8F9E77B8D2C1E12F2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RotationSocketsUITests/Pods-RotationSocketsUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B673550520A3B0128C1A7541 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RotationSocketsUITests/Pods-RotationSocketsUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D7E98D6146239662907F7129 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RotationSocketsUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		681FF8371F714E9C00A55AB8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				681FF8731F715FF600A55AB8 /* RotationViewController.swift in Sources */,
 				681FF8411F714E9C00A55AB8 /* ViewController.swift in Sources */,
+				68D973851F71C03800FB6BBF /* DevicesTableViewController.swift in Sources */,
 				681FF83F1F714E9C00A55AB8 /* AppDelegate.swift in Sources */,
+				681FF8751F71602F00A55AB8 /* Device.swift in Sources */,
+				681FF8771F71615D00A55AB8 /* DeviceService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,6 +584,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5Y8JN2KE83;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = RotationSockets/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nl.revcode.RotationSockets;
@@ -441,6 +603,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5Y8JN2KE83;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = RotationSockets/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nl.revcode.RotationSockets;
