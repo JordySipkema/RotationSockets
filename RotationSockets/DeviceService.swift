@@ -41,27 +41,47 @@ class DeviceService: DeviceEventListener {
 //        devices.append(fakeAndroidDevice)
     }
     
+    func registerDevice(device: Device) {
+        socket.emit("connect device", device.toJson().rawString()!)
+    }
+    
     func addSocketHandlers() {
         socket.on("device connected") {[weak self] data, ack in
-            self?.handleConnectOrRotate(data: data)
+            self?.handleConnectOrRotate(isUpdate: false, data: data)
             return
         }
         socket.on("rotation change") {[weak self] data, ack in
-            self?.handleConnectOrRotate(data: data)
+            self?.handleConnectOrRotate(isUpdate: true, data: data)
             return
         }
     }
     
-    func handleConnectOrRotate(data: [Any]){
+    func handleConnectOrRotate(isUpdate: Bool, data: [Any]){
+        print("\(#function)")
+        var deviceObject: Device? = nil
+        
         if let arr = data as? [[String: Any]] {
             var json = JSON()
             json.dictionaryObject = arr.first!
-            print(json.rawValue)
+            
+            deviceObject = Device.init(dictionary: arr.first!)
+        }
+        
+        // Cancel execution when device is nil.
+        if deviceObject == nil { return }
+        
+        let possibleIndex = devices.index(of: deviceObject!)
+        if let index = possibleIndex {
+            devices[index].update(orientation: deviceObject!.orientation)
+        } else {
+            deviceObject!.subscribe(listener: self)
+            devices.append(deviceObject!)
         }
     }
     
     // Callback function (Protcol DeviceEventListener)
     func DeviceDidChangeEvent(object: Device) {
+        print("\(#function)")
         checkOrientationAndUpdateUI()
         emitDeviceChangeEvent(object: object)
     }
@@ -74,16 +94,13 @@ class DeviceService: DeviceEventListener {
         for device in devices {
             equalState = equalState && (firstOrientation == device.orientation)
         }
+        
+        self.eventDelegate?.UpdateViewDevices(areEqual: equalState)
     }
     
     func emitDeviceChangeEvent(object: Device){
         if (object.isSelf){
-            var json = JSON()
-            json["deviceName"].string = object.name
-            json["deviceState"].string = object.orientation == Device.Orientation.Portrait ? "PORTRAIT" : "LANDSCAPE"
-            json["deviceType"].string = object.os == Device.OS.iOS ? "IPHONE" : "ANDROID"
-            
-            socket.emit("rotation change", json.rawString()!)
+            socket.emit("rotation change", object.toJson().rawString()!)
         }
     }
     

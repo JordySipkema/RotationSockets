@@ -36,6 +36,13 @@ class Device: Equatable {
         }
     }
     
+    init(dictionary dict: [String: Any]){
+        self.name = dict["deviceName"] as! String
+        self.os = (dict["deviceType"] as! String) == "IPHONE" ? Device.OS.iOS : Device.OS.Android
+        self.orientation = (dict["deviceState"] as! String) == "PORTRAIT" ? Device.Orientation.Portrait : Device.Orientation.Landscape
+        self.isSelf = false
+    }
+    
     init(json: JSON){
         self.name = json["deviceName"].stringValue
         self.orientation = json["deviceState"].stringValue == "PORTRAIT" ? Device.Orientation.Portrait : Device.Orientation.Landscape
@@ -56,6 +63,15 @@ class Device: Equatable {
         self.orientation = orientation
         self.eventListener?.DeviceDidChangeEvent(object: self)
         print("Orientation of device \(self.name) changed to \(self.orientation == Orientation.Portrait ? "Portrait" : "Landscape")")
+    }
+    
+    func toJson() -> JSON{
+        var json = JSON()
+        json["deviceName"].string = self.name
+        json["deviceState"].string = self.orientation == Device.Orientation.Portrait ? "PORTRAIT" : "LANDSCAPE"
+        json["deviceType"].string = self.os == Device.OS.iOS ? "IPHONE" : "ANDROID"
+        
+        return json
     }
     
     func subscribe(listener: DeviceEventListener){
