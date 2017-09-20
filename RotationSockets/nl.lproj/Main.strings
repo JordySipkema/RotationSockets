@@ -1,0 +1,9 @@
+
+/* Class = "UINavigationItem"; title = "Connected devices"; ObjectID = "E0z-oq-Ngu"; */
+"E0z-oq-Ngu.title" = "Verbonden apparaten";
+
+/* Class = "UILabel"; text = "Unknown device name"; ObjectID = "V58-uH-ZCA"; */
+"V58-uH-ZCA.text" = "Onbekend apparaat";
+
+/* Class = "UILabel"; text = "Unknown device state"; ObjectID = "pRj-oq-3q4"; */
+"pRj-oq-3q4.text" = "Onbekende orientatie";
